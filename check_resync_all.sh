@@ -3,7 +3,7 @@
 for FILE in ~/bin/monkeyd*.sh; do
   echo "****************************************************************************"
   COUNTER=1
-  DATE=$(date '+%d:%m:%Y %H:%M:%S');
+  DATE=$(date '+%d.%m.%Y %H:%M:%S');
   echo "DATE="$DATE
   echo FILE: " $FILE"
   #cat $FILE
@@ -145,9 +145,9 @@ for FILE in ~/bin/monkeyd*.sh; do
 	# REPORTMAILBLOCKCOUNT="test"
 	echo $REPORTMAILBLOCKCOUNT
 	if [ -z "$REPORTMAILBLOCKCOUNT" ]; then
-	  echo "ALL IN SYNC! REPORTMAILBLOCKCOUNT is empty"
+	  echo $DATE" ALL IN SYNC! REPORTMAILBLOCKCOUNT is empty"
 	else
-	  echo $REPORTMAILBLOCKCOUNT
+	  echo $DATE" "$REPORTMAILBLOCKCOUNT
 	  exit -1
 	fi		
 
@@ -173,7 +173,7 @@ for FILE in ~/bin/monkeyd*.sh; do
 		  echo CURRENT CONF FOLDER: $PWD
 		  echo "Copy BLOCKCHAIN without conf files"
 		  wget http://blockchain.monkey.vision/ -O bootstrap.zip
-		  rm -R peers.dat
+		  # rm -R peers.dat 
 		  rm -R ./database
 		  rm -R ./blocks	  
 		  unzip  bootstrap.zip
