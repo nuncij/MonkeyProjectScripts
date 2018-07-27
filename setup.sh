@@ -48,9 +48,9 @@ if [[ $DOSETUP =~ "y" ]] ; then
   ## COMPILE AND INSTALL
   mkdir -p ~/monkey_tmp
   cd ~/monkey_tmp
-  wget http://www.monkey.vision/BOOTSTRAP/monkey-1.0.0-x86_64-linux-gnu.tar.gz # TO JE ZA POPRAVIT !!!
-  tar -xvzf monkey-1.0.0-x86_64-linux-gnu.tar.gz
-  cd ./monkey-1.0.0/bin
+  wget https://github.com/MONKEYPROJECT/MonkeyV2/releases/download/v2.2.0/monkey-2.2.0-x86_64-linux-gnu.tar.gz
+  tar -xvzf monkey-2.2.0-x86_64-linux-gnu.tar.gz
+  cd ./monkey-2.2.0/bin
   sudo chmod 755 *
   sudo mv ./monkey* /usr/bin
   #read
