@@ -100,7 +100,7 @@ for i in `seq 1 1 $MNCOUNT`; do
 
   ALIAS=${ALIAS,,}
   CONF_DIR=~/.${NAME}_$ALIAS
-  CONF_FILE=aprcoin.conf
+  CONF_FILE=monkey.conf
 
   # Create scripts
   echo '#!/bin/bash' > ~/bin/${NAME}d_$ALIAS.sh
@@ -140,7 +140,7 @@ for i in `seq 1 1 $MNCOUNT`; do
   #echo "addnode=95.179.148.213" >> ${NAME}.conf_TEMP
 
   sudo ufw allow $PORT/tcp
-  mv ${NAME}.conf_TEMP $CONF_DIR/${NAME}.conf
+  mv ${NAME}.conf_TEMP $CONF_DIR/monkey.conf
 
   sh ~/bin/${NAME}d_$ALIAS.sh
 done
