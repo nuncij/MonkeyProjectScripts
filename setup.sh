@@ -17,7 +17,7 @@ echo && echo && echo
 echo "Do you want to install all needed dependencies (no if you did it before, yes if you are installing your first node)? [y/n]"
 read DOSETUP
 
-if [[ "$DOSETUP" -eq "y" ]] ; then
+if [[ ${DOSETUP,,} =~ "y" ]] ; then
   sudo apt-get update
   sudo apt-get -y upgrade
   sudo apt-get -y dist-upgrade
