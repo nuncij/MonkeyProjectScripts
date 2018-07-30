@@ -14,7 +14,7 @@ echo "!                                                 !"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo && echo && echo
 
-echo "Do you want to install all needed dependencies (no if you did it before)? [y/n]"
+echo "Do you want to install all needed dependencies (no if you did it before, yes if you are installing your first node)? [y/n]"
 read DOSETUP
 
 if [[ "$DOSETUP" -eq "y" ]] ; then
@@ -105,7 +105,7 @@ for i in `seq 1 1 $MNCOUNT`; do
   # Create scripts
   echo '#!/bin/bash' > ~/bin/${NAME}d_$ALIAS.sh
   echo "${NAME}d -daemon -conf=$CONF_DIR/${NAME}.conf -datadir=$CONF_DIR "'$*' >> ~/bin/${NAME}d_$ALIAS.sh
-  echo "${NAME}-cli -conf=$CONF_DIR/${NAME}.conf -datadir=$CONF_DIR "'$*' >> ~/bin/${NAME}-cli_$ALIAS.sh
+  echo "${NAME}-cli -conf=$CONF_DIR/${NAME}.conf -datadir=$CONF_DIR "'$*' > ~/bin/${NAME}-cli_$ALIAS.sh
   chmod 755 ~/bin/${NAME}*.sh
 
   mkdir -p $CONF_DIR
