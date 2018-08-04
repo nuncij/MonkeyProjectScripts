@@ -176,6 +176,7 @@ for i in `seq 1 1 $MNCOUNT`; do
   if [ -z "$PRIVKEY" ]; then
 	for (( ; ; ))
 	do  
+	  echo "Please wait ..."
       sleep 3
 	  PRIVKEY=$(~/bin/monkey-cli_${ALIASONE}.sh masternode genkey)
 	  echo "PRIVKEY=$PRIVKEY"
@@ -192,6 +193,7 @@ for i in `seq 1 1 $MNCOUNT`; do
 	do
 		#STOP 
 		~/bin/monkey-cli_$ALIAS.sh stop
+		echo "Please wait ..."
 		sleep 3 # wait 3 seconds 
 		MONKPID=`ps -ef | grep -i $ALIAS | grep -i monkeyd | grep -v grep | awk '{print $2}'`
 		echo "MONKPID="$MONKPID	
