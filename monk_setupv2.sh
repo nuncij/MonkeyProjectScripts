@@ -243,11 +243,12 @@ for i in `seq 1 1 $MNCOUNT`; do
   fi		  
 
   
-  MNCONFIG=$(echo $ALIAS $IP:$PORT $PRIVKEY)
+  MNCONFIG=$(echo $ALIAS $IP:$PORT $PRIVKEY "txhash" "outputidx")
   echo $MNCONFIG >> ~/bin/masternode_config.txt
   
   if [[ ${REBOOTRESTART,,} =~ "y" ]] ; then
     (crontab -l 2>/dev/null; echo "@reboot sh ~/bin/${NAME}d_$ALIAS.sh") | crontab -
+	sudo service cron reload
   fi
   
   COUNTER=$[COUNTER + 1]
@@ -255,7 +256,7 @@ done
 echo ""
 echo "****************************************************************"
 echo "**Copy/Paste lines below in Hot wallet masternode.conf file**"
-echo "**and add txhash and outputidx from masternode outputs command**"
+echo "**and replace txhash and outputidx with data from masternode outputs command**"
 echo "**in hot wallet console**"
 echo "**Tutorial: http://www.monkey.vision/ubuntu-masternodes/ **"
 echo "****************************************************************"
