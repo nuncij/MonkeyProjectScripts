@@ -30,17 +30,18 @@ echo && echo
 echo "***************************************"
 echo "***************MONK COIN***************"
 echo "***************MAIN MENU***************"
+echo "*******http://www.monkey.vision/*******"
 echo ""
-echo -e "${RED}1. list all nodes -> monk_list.sh" # OK
-echo -e "2. check nodes sync -> monk_check_sync.sh" # OK
-echo -e "3. resync node out of sync -> monk_check_resync_all.sh" # OK
-echo -e "4. restart node -> monk_restart.sh" # OK
-echo -e "5. stop node -> monk_stop.sh" # OK
-echo -e "6. install new nodes -> monk_setupv2.sh" # OK
-echo -e "7. check node status -> monk_check_status.sh" # OK
-echo -e "8. exit${NC}" # OK
+echo -e "${RED}1. LIST ALL NODES" # -> MONK_LIST.SH" # OK
+echo -e "2. CHECK NODES SYNC" #  -> MONK_CHECK_SYNC.SH" # OK
+echo -e "3. RESYNC NODE OUT OF SYNC" #  -> MONK_CHECK_RESYNC_ALL.SH" # OK
+echo -e "4. RESTART NODE" #  -> MONK_RESTART.SH" # OK
+echo -e "5. STOP NODE" #  -> MONK_STOP.SH" # OK
+echo -e "6. INSTALL NEW NODES" #  -> MONK_SETUPV2.SH" # OK
+echo -e "7. CHECK NODE STATUS" #  -> MONK_CHECK_STATUS.SH" # OK
+echo -e "8. EXIT${NC}" # OK
 echo "---------------------------------------"
-echo "choose an option:"
+echo "choose option number:"
 read OPTION
 echo ${OPTION}
 ALIAS=""
@@ -50,25 +51,25 @@ if [[ ${OPTION} == "1" ]] ; then
   chmod 777 monk_list.sh
   /bin/bash ./monk_list.sh
 elif [[ ${OPTION} == "2" ]] ; then
-  echo "Which node do you want to check if synced? Enter alias (if empty then will check all)"
+  echo -e "${RED}Which node do you want to check if synced? Enter alias (if empty then will check all)"
   read ALIAS
   wget https://raw.githubusercontent.com/CryptoCatOkiOKi/MonkeyProjectScripts/master/monk_check_sync.sh -O monk_check_sync.sh > /dev/null 2>&1
   chmod 777 monk_check_sync.sh  
   /bin/bash ./monk_check_sync.sh $ALIAS
 elif [[ ${OPTION} == "3" ]] ; then
-  echo "Which node do you want to check sync and resync? Enter alias (if empty then will check all)"
+  echo -e "${RED}Which node do you want to check sync and resync? Enter alias (if empty then will check all)"
   read ALIAS
   wget https://raw.githubusercontent.com/CryptoCatOkiOKi/MonkeyProjectScripts/master/monk_check_resync_all.sh -O monk_check_resync_all.sh > /dev/null 2>&1
   chmod 777 monk_check_resync_all.sh  
   /bin/bash ./monk_check_resync_all.sh $ALIAS
 elif [[ ${OPTION} == "4" ]] ; then
-  echo "Which node do you want to restart? Enter alias (if empty then will check all)"
+  echo -e "${RED}Which node do you want to restart? Enter alias (if empty then will check all)"
   read ALIAS
   wget https://raw.githubusercontent.com/CryptoCatOkiOKi/MonkeyProjectScripts/master/monk_restart.sh -O monk_restart.sh > /dev/null 2>&1
   chmod 777 monk_restart.sh  
   /bin/bash ./monk_restart.sh $ALIAS
 elif [[ ${OPTION} == "5" ]] ; then
-  echo "Which node do you want to stop? Enter alias (if empty then will check all)"
+  echo -e "${RED}Which node do you want to stop? Enter alias (if empty then will check all)"
   read ALIAS
   wget https://raw.githubusercontent.com/CryptoCatOkiOKi/MonkeyProjectScripts/master/monk_stop.sh -O monk_stop.sh > /dev/null 2>&1
   chmod 777 monk_stop.sh  
@@ -78,7 +79,7 @@ elif [[ ${OPTION} == "6" ]] ; then
   chmod 777 monk_setupv2.sh
   /bin/bash ./monk_setupv2.sh
 elif [[ ${OPTION} == "7" ]] ; then
-  echo "For which node do you want to check masternode status? Enter alias (if empty then will check all)"
+  echo -e "${RED}For which node do you want to check masternode status? Enter alias (if empty then will check all)"
   read ALIAS
   wget https://raw.githubusercontent.com/CryptoCatOkiOKi/MonkeyProjectScripts/master/monk_check_status.sh -O monk_check_status.sh > /dev/null 2>&1
   chmod 777 monk_check_status.sh  

@@ -76,11 +76,14 @@ NAME="monkey"
 COUNTER=1
 
 MNCOUNT=""
+REBOOTRESTART=""
 re='^[0-9]+$'
 while ! [[ $MNCOUNT =~ $re ]] ; do
    echo ""
    echo "How many nodes do you want to create on this server?, followed by [ENTER]:"
    read MNCOUNT
+   echo "Do you want wallets to restart on reboot? [y/n]"
+   read REBOOTRESTART
 done
 
 for i in `seq 1 1 $MNCOUNT`; do
@@ -242,6 +245,10 @@ for i in `seq 1 1 $MNCOUNT`; do
   
   MNCONFIG=$(echo $ALIAS $IP:$PORT $PRIVKEY)
   echo $MNCONFIG >> ~/bin/masternode_config.txt
+  
+  if [[ ${REBOOTRESTART,,} =~ "y" ]] ; then
+    (crontab -l 2>/dev/null; echo "@reboot sh ~/bin/${NAME}d_$ALIAS.sh") | crontab -
+  fi
   
   COUNTER=$[COUNTER + 1]
 done
