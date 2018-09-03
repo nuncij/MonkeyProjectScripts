@@ -90,6 +90,11 @@ for FILE in ~/bin/monkeyd_$PARAM1.sh; do
 		#break
 		#STOP 
 		~/bin/monkey-cli_$MONKNAME.sh stop
+
+		if [[ "$COUNTER" -gt 1 ]]; then
+		  kill -9 $MONKPID
+		fi
+		
 		sleep 3 # wait 3 seconds 
 		MONKPID=`ps -ef | grep -i $MONKNAME | grep -i monkeyd | grep -v grep | awk '{print $2}'`
 		echo "MONKPID="$MONKPID
