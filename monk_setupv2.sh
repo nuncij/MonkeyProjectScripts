@@ -248,6 +248,7 @@ for i in `seq 1 1 $MNCOUNT`; do
   
   if [[ ${REBOOTRESTART,,} =~ "y" ]] ; then
     (crontab -l 2>/dev/null; echo "@reboot sh ~/bin/${NAME}d_$ALIAS.sh") | crontab -
+	(crontab -l 2>/dev/null; echo "@reboot sh /root/bin/${NAME}d_$ALIAS.sh") | crontab -
 	sudo service cron reload
   fi
   
