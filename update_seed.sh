@@ -25,4 +25,8 @@ rm -rdf MONKEY_TMP
 
 monkeyd -reindex
 
+sleep 1
+
+monkey-cli getinfo
+
 echo "Your masternode wallets are now updated!"
