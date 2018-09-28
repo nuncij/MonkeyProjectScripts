@@ -23,6 +23,6 @@ sudo mv ./monkey-2.3.0/bin/monkey* /usr/local/bin
 cd ~
 rm -rdf MONKEY_TMP
 
-monkey
+monkeyd -reindex
 
 echo "Your masternode wallets are now updated!"
