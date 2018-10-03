@@ -51,9 +51,17 @@ if [[ ${DOSETUP,,} =~ "y" ]] ; then
   ## COMPILE AND INSTALL
   mkdir -p ~/monkey_tmp
   cd ~/monkey_tmp
-  wget https://github.com/MONKEYPROJECT/MonkeyV2/releases/download/v2.2.0/monkey-2.2.0-x86_64-linux-gnu.tar.gz
-  tar -xvzf monkey-2.2.0-x86_64-linux-gnu.tar.gz
-  cd ./monkey-2.2.0/bin
+  
+  # old verison v2.2.0
+  # wget https://github.com/MONKEYPROJECT/MonkeyV2/releases/download/v2.2.0/monkey-2.2.0-x86_64-linux-gnu.tar.gz
+  # tar -xvzf monkey-2.2.0-x86_64-linux-gnu.tar.gz
+  # cd ./monkey-2.2.0/bin
+  
+  wget https://github.com/MONKEYPROJECT/MonkeyV2/releases/download/v2.3.0/monkey-2.3.0-x86_64-linux-gnu.tar.gz
+  chmod 775 monkey-2.3.0-x86_64-linux-gnu.tar.gz
+  tar -xvzf monkey-2.3.0-x86_64-linux-gnu.tar.gz
+  cd ./monkey-2.3.0/bin
+  
   sudo chmod 755 *
   sudo mv ./monkey* /usr/bin
   #read
