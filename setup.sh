@@ -19,7 +19,7 @@ echo "You can find the link for the new script on http://ubuntu.monkey.vision/"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo ""
 read -n 1 -s -r -p "*****Press any key to continue or ctrl+c to cancel*****"
-
+echo ""
 echo "Do you want to install all needed dependencies (no if you did it before, yes if you are installing your first node)? [y/n]"
 read DOSETUP
 
