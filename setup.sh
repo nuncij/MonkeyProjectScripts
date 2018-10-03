@@ -1,11 +1,11 @@
 #/bin/bash
 
 cd ~
-echo "****************************************************************************"
-echo "* Ubuntu 16.04 is the recommended opearting system for this install.       *"
-echo "*                                                                          *"
-echo "* This script will install and configure your MONK Coin masternodes.       *"
-echo "****************************************************************************"
+echo "******************************************************************************"
+echo "* Ubuntu 16.04 is the recommended operating system for this install.         *"
+echo "*                                                                            *"
+echo "* This script will install and configure your MONK Coin masternodes(v2.3.0). *"
+echo "******************************************************************************"
 echo && echo && echo
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "!                                                 !"
@@ -14,8 +14,9 @@ echo "!                                                 !"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo && echo && echo
 
-echo "Use the new script!"
-exit -1
+echo "This is the old script but is updated to install wallet version 2.3.0!"
+echo "You can find the link for the new script on http://ubuntu.monkey.vision/"
+read -n 1 -s -r -p "*****Press any key to continue*****"
 
 echo "Do you want to install all needed dependencies (no if you did it before, yes if you are installing your first node)? [y/n]"
 read DOSETUP
