@@ -81,7 +81,8 @@ elif [[ ${OPTION} == "5" ]] ; then
   dos2unix monk_stop.sh > /dev/null 2>&1
   /bin/bash ./monk_stop.sh $ALIAS
 elif [[ ${OPTION} == "6" ]] ; then
-  wget https://raw.githubusercontent.com/MONKEYPROJECT/Guides/master/monk_setupv2.sh -O monk_setupv2.sh > /dev/null 2>&1
+  #wget https://raw.githubusercontent.com/MONKEYPROJECT/Guides/master/monk_setupv2.sh -O monk_setupv2.sh > /dev/null 2>&1
+  wget https://raw.githubusercontent.com/CryptoCatOkiOKi/MonkeyProjectScripts/master/monk_setupv2.sh -O monk_setupv2.sh > /dev/null 2>&1
   chmod 777 monk_setupv2.sh
   dos2unix monk_setupv2.sh > /dev/null 2>&1
   /bin/bash ./monk_setupv2.sh
