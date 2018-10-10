@@ -48,7 +48,8 @@ if [[ ${DOSETUP,,} =~ "y" ]] ; then
   mkdir -p ~/monkey_tmp
   cd ~/monkey_tmp
   
-  wget https://github.com/MONKEYPROJECT/MonkeyV2/releases/download/v2.3.0/monkey-2.3.0-x86_64-linux-gnu.tar.gz
+  #wget https://github.com/MONKEYPROJECT/MonkeyV2/releases/download/v2.3.0/monkey-2.3.0-x86_64-linux-gnu.tar.gz
+  wget https://www.monkey.vision/BOOTSTRAP/monkey-2.3.0-x86_64-linux-gnu.tar.gz -O monkey-2.3.0-x86_64-linux-gnu.tar.gz
   chmod 775 monkey-2.3.0-x86_64-linux-gnu.tar.gz
   tar -xvzf monkey-2.3.0-x86_64-linux-gnu.tar.gz
   cd ./monkey-2.3.0/bin
