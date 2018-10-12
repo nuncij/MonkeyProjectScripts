@@ -1,12 +1,8 @@
 #/bin/bash
 
-## x. list all nodes -> monk_list.sh
-## 1. check nodes sync -> monk_check_sync.sh
-## 2. resync node out of sync -> monk_check_resync_all.sh
-## x. restart node -> monk_restart.sh
-## x. stop node -> monk_stop.sh
-## 3. install new nodes -> monk_setupv2.sh
-## 4. exit
+##
+##
+##
 
 RED='\033[1;31m'
 GREEN='\033[0;32m'
@@ -34,13 +30,14 @@ echo "*******http://www.monkey.vision/*******"
 echo ""
 echo -e "${RED}1. LIST ALL NODES" # -> MONK_LIST.SH" # OK
 echo -e "2. CHECK NODES SYNC" #  -> MONK_CHECK_SYNC.SH" # OK
-echo -e "3. RESYNC NODE OUT OF SYNC" #  -> MONK_CHECK_RESYNC_ALL.SH" # OK
-echo -e "4. RESTART NODE" #  -> MONK_RESTART.SH" # OK
-echo -e "5. STOP NODE" #  -> MONK_STOP.SH" # OK
+echo -e "3. RESYNC NODES THAT ARE OUT OF SYNC" #  -> MONK_CHECK_RESYNC_ALL.SH" # OK
+echo -e "4. RESTART NODES" #  -> MONK_RESTART.SH" # OK
+echo -e "5. STOP NODES" #  -> MONK_STOP.SH" # OK
 echo -e "6. INSTALL NEW NODES" #  -> MONK_SETUPV2.SH" # OK
-echo -e "7. CHECK NODE STATUS" #  -> MONK_CHECK_STATUS.SH" # OK
-echo -e "${YELLOW}8. MONKEY LOGO${RED}" # MONKEY LOGO
-echo -e "9. EXIT${NC}" # OK
+echo -e "7. CHECK NODES STATUS" #  -> MONK_CHECK_STATUS.SH" # OK
+echo -e "8. RESYNC SPECIFIC NODE (useful if node is stopped)" # -> monk_resync.sh # OK 
+echo -e "${YELLOW}9. MONKEY LOGO${RED}" # MONKEY LOGO
+echo -e "10. EXIT${NC}" # OK
 echo "---------------------------------------"
 echo "choose option number:"
 read OPTION
@@ -81,8 +78,7 @@ elif [[ ${OPTION} == "5" ]] ; then
   dos2unix monk_stop.sh > /dev/null 2>&1
   /bin/bash ./monk_stop.sh $ALIAS
 elif [[ ${OPTION} == "6" ]] ; then
-  #wget https://raw.githubusercontent.com/MONKEYPROJECT/Guides/master/monk_setupv2.sh -O monk_setupv2.sh > /dev/null 2>&1
-  wget https://raw.githubusercontent.com/CryptoCatOkiOKi/MonkeyProjectScripts/master/monk_setupv2.sh -O monk_setupv2.sh > /dev/null 2>&1
+  wget https://raw.githubusercontent.com/MONKEYPROJECT/Guides/master/monk_setupv2.sh -O monk_setupv2.sh > /dev/null 2>&1
   chmod 777 monk_setupv2.sh
   dos2unix monk_setupv2.sh > /dev/null 2>&1
   /bin/bash ./monk_setupv2.sh
@@ -94,11 +90,18 @@ elif [[ ${OPTION} == "7" ]] ; then
   dos2unix monk_check_status.sh > /dev/null 2>&1
   /bin/bash ./monk_check_status.sh $ALIAS
 elif [[ ${OPTION} == "8" ]] ; then  
+  echo -e "${RED}For which node do you want to check masternode status? Enter alias (mandatory!)${NC}"
+  read ALIAS
+  wget https://raw.githubusercontent.com/MONKEYPROJECT/Guides/master/monk_resync.sh -O monk_resync.sh > /dev/null 2>&1
+  chmod 777 monk_resync.sh
+  dos2unix monk_resync.sh > /dev/null 2>&1
+  /bin/bash ./monk_resync.sh $ALIAS
+elif [[ ${OPTION} == "9" ]] ; then  
   wget https://raw.githubusercontent.com/MONKEYPROJECT/Guides/master/monkey_logo.sh -O monkey_logo.sh > /dev/null 2>&1
   chmod 777 monkey_logo.sh
   dos2unix monkey_logo.sh > /dev/null 2>&1
   /bin/bash ./monkey_logo.sh
-elif [[ ${OPTION} == "9" ]] ; then
+elif [[ ${OPTION} == "10" ]] ; then
   exit 0
 fi
 ###
