@@ -12,6 +12,11 @@ if [ -z "$PARAM1" ]; then
   exit -1
 fi
 
+if [ ! -f ~/bin/monkeyd_$PARAM1.sh ]; then
+    echo "Wallet $PARAM1 not found!"
+	exit -1
+fi
+
 for FILE in ~/bin/monkeyd_$PARAM1.sh; do
   echo "****************************************************************************"
   COUNTER=1
@@ -27,7 +32,12 @@ for FILE in ~/bin/monkeyd_$PARAM1.sh; do
   MONKCONFPATH=$(echo "$HOME/.monkey_$MONKNAME")
   # echo $MONKSTARTPOS_1
   # echo ${MONKLENGTH:0:2}
-  echo CONF FOLDER: $MONKCONFPATH
+  echo CONF DIR: $MONKCONFPATH
+  
+  if [ ! -d $MONKCONFPATH ]; then
+	echo "Directory $MONKCONFPATH not found!"
+	exit -1
+  fi	   
   
   for (( ; ; ))
   do
