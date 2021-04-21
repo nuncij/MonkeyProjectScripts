@@ -31,7 +31,7 @@ for FILE in ~/bin/monkeyd*.sh; do
   
 	LASTBLOCK=$($FILE getblockcount)
 	GETBLOCKHASH=$($FILE getblockhash $LASTBLOCK)
-	GETBLOCKHASHEXPLORER=$(curl -s4 http://explorer.monkey.community/api/getblockhash?index=$LASTBLOCK)
+	GETBLOCKHASHEXPLORER=$(curl -s4 https://www.coinexplorer.net/api/v1/MONK/block?height=$LASTBLOCK)
 
 	echo "LASTBLOCK="$LASTBLOCK
 	echo "GETBLOCKHASH="$GETBLOCKHASH
